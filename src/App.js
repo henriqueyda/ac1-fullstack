@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route, Link} from 'react-router-dom';
+import Form from './Form'
+import Show from './Show';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header>
+      <Link to='/'>Voltar para página inicial</Link><br/>
+      <Link to='/form'>Acesse aqui o formulário</Link><br/>
+    </header>
+    <main>
+      <Switch>
+        <Route path='/form' component= {Form}/>
+        <Route path='/show' component= {Show}/>
+      </Switch>
+    </main></>
   );
 }
 
